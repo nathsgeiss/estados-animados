@@ -291,3 +291,189 @@ button:focus-visible {
         opacity: 1;
     }
 }
+
+/* Passo 1 - Transições e efeitos de hover (mouse em cima) */
+
+/* 1. Botões região e favoritos */
+.botao-regiao,
+.botao-favoritos {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* 2. Botão municípios */
+.botao-municipios {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.botao-municipios:hover {
+    background-color: var(--cor-regiao);
+    color: #ffffff;
+}
+
+/* 3. Estrela de favoritos */
+.botao-favorito {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.botao-favorito:hover {
+    transform: scale(1.3);
+}
+
+/* Passo 2 - Os cartões sobem e ganham sombra suavemente */
+
+.estado {
+    transition: transform 0.3s ease, box-shadow o.3s ease;
+}
+
+.estado:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Passo 3 - Animação de entrada dos cards */
+
+@keyframes surgir {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.estado:not(.esqueleto) {
+    animation: surgir 0.4s ease-out;
+}
+
+/* Passo 4 - Menu suspenso de regiões */
+
+.menu-regioes {
+    position: relative;
+    display: inline-block;
+    margin-top: 12px;
+}
+
+.menu-lista {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-botao {
+    padding: 8px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 999px;
+    background-color: rgba(225, 225, 225, 0.15);
+    color: #ffffff;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.menu-botao:hover {
+    background-color: rgba(225, 225, 225, 0.25);
+}
+
+/* Sub-menu escondido */
+.submenu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-10px);
+    min-width: 180px;
+    margin: 8px 0 0 0;
+    padding: 8px;
+    list-style: none;
+    background-color: var(--cor-cartao);
+    border: 1px solid var(--cor-borda);
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+
+/* Estado invisível para animação suave */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+    z-index: 100;
+}
+
+/* Quando passa o mouse ou Tab, o menu aparece suavemente */
+.tem-submenu:hover .submenu,
+.tem-submenu:focus-within .submenu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Estilo dos botões de opção dentro do menu suspenso */
+.opcao-regiao {
+    display: block;
+    width: 100%;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 6px;
+    background-color: transparent;
+    color: var(--cor-texto);
+    font-size: 15px;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.opcao-regiao:hover {
+    background-color: var(--cor-fundo);
+    color: var(--cor-principal);
+    font-weight: bold;
+}
+
+/* Passo 6 - Mensagem buscando piscando */
+.estado-municipios.buscando {
+    animation: piscar 1.2s ease-in-out infinite;
+}
+
+/* Passo 7 - "Sobre os dados" */
+
+.sobre {
+    max-width: 800px;
+    margin: 40px auto 20px auto;
+}
+
+.sobre h2 {
+    margin-bottom: 16px;
+    font-size: 24px;
+    color: var(--cor-texto);
+}
+
+.duvida {
+    margin-bottom: 12px;
+    background-color: var(--cor-cartao);
+    border: 1px solid var(--cor-borda);
+    border-radius: 10px;
+    padding: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.duvida summary {
+    font-weight: bold;
+    cursor: pointer;
+    color: var(--cor-texto);
+    font-size: 16px;
+}
+
+/* Aberta, a pergunta fica na cor principal */
+.duvida[open] summary {
+    color: var(--cor-principal);
+    margin-bottom: 12px;
+}
+
+.duvida-resposta {
+    margin: 0;
+    color: var(--cor-suave);
+    line-height: 1.5;
+    
+    /* Animação suave para a resposta ao abrir */
+    animation: surgir 0.3s ease-out;
+}

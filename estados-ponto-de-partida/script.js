@@ -169,7 +169,9 @@ async function mostrarMunicipios(sigla, card) {
 
     telaMunicipios.textContent = 'Buscando...';
     telaMunicipios.classList.remove('erro');
+    telaMunicipios.classList.add('buscando'); // Adiciona a classe para piscar
     botao.disabled = true;
+    
     try {
         const quantidade = await contarMunicipios(sigla);
         telaMunicipios.textContent = quantidade + ' municípios';
@@ -177,6 +179,7 @@ async function mostrarMunicipios(sigla, card) {
         telaMunicipios.textContent = erro.message;
         telaMunicipios.classList.add('erro');
     } finally {
+        telaMunicipios.classList.remove('buscando'); // O finally roda nos dois casos (sucesso ou erro) e retira a classe
         botao.disabled = false;
     }
 }
@@ -324,3 +327,17 @@ botaoFavoritos.addEventListener('click', () => {
 });
 
 carregarEstados();
+
+/* -----------------------------------------------------------
+   Passo 5 — O menu filtra as regiões
+   ----------------------------------------------------------- */
+
+const opcoesMenuRegiao = document.querySelectorAll('.submenu .opcao-regiao');
+
+opcoesMenuRegiao.forEach((botao) => {
+    botao.addEventListener('click', () => {
+        regiaoEscolhida = botao.dataset.regiao;
+        atualizarTela();
+        botao.blur();
+    });
+});
