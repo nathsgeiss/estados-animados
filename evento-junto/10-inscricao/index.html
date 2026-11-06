@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semana da Tecnologia</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <header class="topo">
+        <div class="topo-conteudo">
+            <a href="#inicio" class="logo">Semana<strong>Tech</strong></a>
+
+            <button type="button" class="botao-menu" aria-expanded="false">☰ Menu</button>
+
+            <nav class="menu">
+                <ul class="menu-lista">
+                    <li class="menu-item"><a href="#inicio">Início</a></li>
+                    <li class="menu-item tem-submenu">
+                        <a href="#programacao">Programação ▾</a>
+                        <ul class="submenu">
+                            <li><a href="#segunda">Segunda: front-end</a></li>
+                            <li><a href="#terca">Terça: design</a></li>
+                            <li><a href="#quarta">Quarta: Git e GitHub</a></li>
+                            <li><a href="#quinta">Quinta: o primeiro app</a></li>
+                            <li><a href="#sexta">Sexta: carreira</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item"><a href="#duvidas">Dúvidas</a></li>
+                    <li class="menu-item"><a href="#inscricao">Inscrição</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="destaque" id="inicio">
+            <p class="destaque-data">De segunda a sexta, às 19h</p>
+            <h1 class="destaque-titulo">Semana da Tecnologia</h1>
+            <p class="destaque-texto">Cinco noites de palestras sobre programação, design e carreira, para quem
+                está começando.</p>
+            <a href="#inscricao" class="botao-inscricao">Quero me inscrever</a>
+        </section>
+
+        <div class="faixa">
+            <div class="faixa-trilho">
+                <ul class="faixa-grupo">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>Git</li>
+                    <li>Design</li>
+                    <li>APIs</li>
+                    <li>Acessibilidade</li>
+                    <li>Carreira</li>
+                </ul>
+                <!-- O mesmo grupo de novo, para a faixa poder dar a volta sem buraco -->
+                <ul class="faixa-grupo" aria-hidden="true">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>Git</li>
+                    <li>Design</li>
+                    <li>APIs</li>
+                    <li>Acessibilidade</li>
+                    <li>Carreira</li>
+                </ul>
+            </div>
+        </div>
+
+        <section class="secao" id="programacao">
+            <h2>Programação</h2>
+            <ul class="palestras">
+                <li class="palestra" id="segunda">
+                    <p class="palestra-dia">Segunda</p>
+                    <h3 class="palestra-titulo">Front-end na prática</h3>
+                    <p class="palestra-texto">Do HTML ao site publicado: como uma página sai do editor e chega
+                        ao navegador.</p>
+                </li>
+                <li class="palestra" id="terca">
+                    <p class="palestra-dia">Terça</p>
+                    <h3 class="palestra-titulo">Design de interfaces</h3>
+                    <p class="palestra-texto">Cores, espaçamento e tipografia: o que faz uma tela parecer
+                        profissional.</p>
+                </li>
+                <li class="palestra" id="quarta">
+                    <p class="palestra-dia">Quarta</p>
+                    <h3 class="palestra-titulo">Git e GitHub sem medo</h3>
+                    <p class="palestra-texto">Commits, branches e o portfólio que trabalha por você.</p>
+                </li>
+                <li class="palestra" id="quinta">
+                    <p class="palestra-dia">Quinta</p>
+                    <h3 class="palestra-titulo">O primeiro app</h3>
+                    <p class="palestra-texto">Uma ideia, uma API e um fim de semana: um projeto do começo ao
+                        fim.</p>
+                </li>
+                <li class="palestra" id="sexta">
+                    <p class="palestra-dia">Sexta</p>
+                    <h3 class="palestra-titulo">Carreira em tecnologia</h3>
+                    <p class="palestra-texto">Estágio, primeiro emprego e o que as empresas procuram em quem está
+                        começando.</p>
+                </li>
+            </ul>
+        </section>
+
+        <section class="secao" id="palestrantes">
+            <h2>Quem vai falar</h2>
+            <ul class="palestrantes">
+                <li class="palestrante" tabindex="0">
+                    <div class="palestrante-interno">
+                        <div class="palestrante-frente">
+                            <p class="palestrante-iniciais">AM</p>
+                            <h3 class="palestrante-nome">Ana Martins</h3>
+                            <p class="palestrante-cargo">Desenvolvedora front-end</p>
+                        </div>
+                        <div class="palestrante-verso">
+                            <p>Fala na segunda. Começou com um curso como este e hoje cuida das telas de um
+                                aplicativo de entregas.</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="palestrante" tabindex="0">
+                    <div class="palestrante-interno">
+                        <div class="palestrante-frente">
+                            <p class="palestrante-iniciais">RS</p>
+                            <h3 class="palestrante-nome">Rafael Souza</h3>
+                            <p class="palestrante-cargo">Designer de interfaces</p>
+                        </div>
+                        <div class="palestrante-verso">
+                            <p>Fala na terça. Desenha telas há oito anos e vai mostrar o antes e o depois de
+                                projetos reais.</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="palestrante" tabindex="0">
+                    <div class="palestrante-interno">
+                        <div class="palestrante-frente">
+                            <p class="palestrante-iniciais">JL</p>
+                            <h3 class="palestrante-nome">Júlia Lima</h3>
+                            <p class="palestrante-cargo">Recrutadora de tecnologia</p>
+                        </div>
+                        <div class="palestrante-verso">
+                            <p>Fala na sexta. Contrata estagiários de tecnologia e vai contar o que olha num
+                                portfólio.</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <section class="secao" id="duvidas">
+            <h2>Dúvidas</h2>
+            <div class="duvidas">
+                <details class="duvida">
+                    <summary>Precisa pagar?</summary>
+                    <p class="duvida-resposta">Não. Todas as palestras são gratuitas: basta fazer a inscrição.</p>
+                </details>
+                <details class="duvida">
+                    <summary>Preciso saber programar?</summary>
+                    <p class="duvida-resposta">Não. As palestras são pensadas para quem está começando.</p>
+                </details>
+                <details class="duvida">
+                    <summary>Preciso levar computador?</summary>
+                    <p class="duvida-resposta">Não. As palestras são para assistir; não há parte prática.</p>
+                </details>
+                <details class="duvida">
+                    <summary>Vai ter certificado?</summary>
+                    <p class="duvida-resposta">Sim, para quem assistir a pelo menos três das cinco palestras.</p>
+                </details>
+            </div>
+        </section>
+
+        <section class="inscricao" id="inscricao">
+            <h2>Garanta a sua vaga</h2>
+            <p>As vagas são limitadas ao tamanho do auditório.</p>
+            <form class="form-inscricao" novalidate>
+                <label for="email">Seu e-mail</label>
+                <div class="linha-inscricao">
+                    <input type="email" id="email" class="campo-email" placeholder="voce@exemplo.com" required>
+                    <button type="submit" class="botao-enviar">
+                        <span class="girando" aria-hidden="true"></span>
+                        Garantir a vaga
+                    </button>
+                </div>
+                <p class="mensagem-inscricao" aria-live="polite"></p>
+            </form>
+        </section>
+
+    </main>
+
+    <footer class="rodape">
+        <p>Semana da Tecnologia — um evento fictício, feito em aula</p>
+    </footer>
+
+</body>
+
+</html>
